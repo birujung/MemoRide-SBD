@@ -11,16 +11,21 @@ const bcrypt = require('bcrypt');
 
 //Insiasi koneksi ke database
 const db = new Client({
-    
-    
-    //isi dengan konfigurasi database anda
-
-
+    connectionString : 'akmal.rabbani:uYJrI2KP9swx@ep-cold-band-487702.ap-southeast-1.aws.neon.tech/MemoRide',
+    sslmode: "require",
+    ssl: true
 });
 
 //Melakukan koneksi dan menunjukkan indikasi database terhubung
+db.connect((err)=>{
+    if(err){
+        console.log(err)
+        return
+    }
 
-//jalankan koneksi ke database
+    //jalankan koneksi ke database
+    console.log('Connected to Database')
+});
 
  
 //middleware (session)
@@ -234,6 +239,6 @@ router.get('/logout', (req, res) => {
 });
  
 app.use('/', router);
-app.listen(process.env.PORT || /* tulis port sesuai 4 angka terakhir npm kalian */, () => {
-    console.log(`App Started on PORT ${process.env.PORT || /* tulis port sesuai 4 angka terakhir npm kalian */}`);
+app.listen(process.env.PORT || 1610, () => {
+    console.log(`App Started on PORT ${process.env.PORT || 1610}`);
 });
