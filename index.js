@@ -170,12 +170,19 @@ router.post('/delete', (req, res) => {
 
 //router 5: melakukan pemngambilan data dari database
 router.post('/getdata', (req, res) => {
-    const query = ""; // query ambil data
+    const query = "SELECT * FROM Wisata"; // query ambil data
     //mendapatkan data dari database
     db.query(query, (err, results) => {
-       //tambahkan konfigurasi disini
+        if (err) {
+          console.error('Error executing query', err.stack);
+          return res.send([]);
+        }
+    
+        const data = results.rows;
+        return res.send(data);
+      });
     });
-});
+  
 
  
 // Router 6: merupakan tampilan data ketika login berhasil dilakukan
