@@ -11,7 +11,7 @@ const bcrypt = require('bcrypt');
 
 //Insiasi koneksi ke database
 const db = new Client({
-    connectionString : 'akmal.rabbani:uYJrI2KP9swx@ep-cold-band-487702.ap-southeast-1.aws.neon.tech/MemoRide',
+    connectionString : '@ep-cold-band-487702.ap-southeast-1.aws.neon.tech',
     sslmode: "require",
     ssl: true
 });
@@ -246,6 +246,6 @@ router.get('/logout', (req, res) => {
 });
  
 app.use('/', router);
-app.listen(process.env.PORT || 1610, () => {
-    console.log(`App Started on PORT ${process.env.PORT || 1610}`);
+app.listen(process.env.PORT || 6216, () => {
+    console.log(`App Started on PORT ${process.env.PORT || 6216}`);
 });
