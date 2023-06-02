@@ -65,3 +65,21 @@ app.use('/', router);
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
+
+// ROUTERS
+// Landing page
+router.get('/', async (req, res) => {
+    try {
+        const query = 'SELECT * FROM wisata;';
+        const values = ['SHOWING'];
+        
+        const result = await db.query(query, values);
+        const wisata = result.rows;
+
+        return res.json(wisata);
+    } catch (err) {
+        console.error(err);
+        return res.json({ message: 'Retrieve data failed.' });
+    }
+});
