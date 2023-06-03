@@ -83,3 +83,66 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Register route
+router.post('/register', async (req, res) => {
+    try {
+        const { username, password } = req.body;
+        
+        // Check if the username is already taken
+        const query = 'SELECT * FROM users WHERE username = $1;';
+        const values = [username];
+        const result = await db.query(query, values);
+        const existingUser = result.rows[0];
+        
+        if (existingUser) {
+            return res.status(409).json({ message: 'Username already taken' });
+        }
+        
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(password, 10);
+        
+        // Insert the new user into the database
+        const insertQuery = 'INSERT INTO users (username, password) VALUES ($1, $2);';
+        const insertValues = [username, hashedPassword];
+        await db.query(insertQuery, insertValues);
+        
+        return res.json({ message: 'Registration successful' });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Registration failed' });
+    }
+});
+
+// Login route
+router.post('/login', async (req, res) => {
+    try {
+        const { username, password } = req.body;
+        
+        // Retrieve the user from the database based on the username
+        const query = 'SELECT * FROM users WHERE username = $1;';
+        const values = [username];
+        const result = await db.query(query, values);
+        const user = result.rows[0];
+        
+        if (!user) {
+            return res.status(401).json({ message: 'Invalid username or password' });
+        }
+        
+        // Compare the provided password with the stored hashed password
+        const passwordMatch = await bcrypt.compare(password, user.password);
+        if (!passwordMatch) {
+            return res.status(401).json({ message: 'Invalid username or password' });
+        }
+        
+        // Store user data in the session
+        req.session.user = {
+            id: user.id,
+            username: user.username
+        };
+        
+        return res.json({ message: 'Login successful' });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Login failed' });
+    }
+});
