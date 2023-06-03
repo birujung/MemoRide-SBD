@@ -2,10 +2,7 @@
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
-//const paypal = require('paypal-rest-sdk');
 const bcrypt = require('bcrypt');
-//const axios = require('axios');
-//const multer = require('multer');
 const fs = require('fs');
 
 //initialize the app as an express app
@@ -146,3 +143,198 @@ router.post('/login', async (req, res) => {
         return res.status(500).json({ message: 'Login failed' });
     }
 });
+
+// Create a booking
+router.post('/booking', async (req, res) => {
+    try {
+        const { userId, username, namaLengkap, jumlahOrang, noTelepon, bookingDate } = req.body;
+
+        const query = 'INSERT INTO booking (user_id, username, nama_lengkap, jumlah_orang, no_telepon, booking_date) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;';
+        const values = [userId, username, namaLengkap, jumlahOrang, noTelepon, bookingDate];
+
+        const result = await db.query(query, values);
+        const newBooking = result.rows[0];
+
+        return res.json(newBooking);
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Create booking failed' });
+    }
+});
+
+// Get all bookings
+router.get('/booking', async (req, res) => {
+    try {
+        const query = 'SELECT * FROM booking;';
+        const result = await db.query(query);
+        const bookings = result.rows;
+
+        return res.json(bookings);
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Retrieve bookings failed' });
+    }
+});
+
+// Get a specific booking by user ID
+router.get('/booking/:userId', async (req, res) => {
+    try {
+        const { userId } = req.params;
+
+        const query = 'SELECT * FROM booking WHERE user_id = $1;';
+        const values = [userId];
+
+        const result = await db.query(query, values);
+        const booking = result.rows[0];
+
+        if (!booking) {
+            return res.status(404).json({ message: 'Booking not found' });
+        }
+
+        return res.json(booking);
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Retrieve booking failed' });
+    }
+});
+
+// Update a specific booking by user ID
+router.put('/booking/:userId', async (req, res) => {
+    try {
+        const { userId } = req.params;
+        const { username, namaLengkap, jumlahOrang, noTelepon, bookingDate } = req.body;
+
+        const query = 'UPDATE booking SET username = $2, nama_lengkap = $3, jumlah_orang = $4, no_telepon = $5, booking_date = $6 WHERE user_id = $1 RETURNING *;';
+        const values = [userId, username, namaLengkap, jumlahOrang, noTelepon, bookingDate];
+
+        const result = await db.query(query, values);
+        const updatedBooking = result.rows[0];
+
+        if (!updatedBooking) {
+            return res.status(404).json({ message: 'Booking not found' });
+        }
+
+        return res.json(updatedBooking);
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Update booking failed' });
+    }
+});
+
+// Delete a specific booking by user ID
+router.delete('/booking/:userId', async (req, res) => {
+    try {
+        const { userId } = req.params;
+
+        const query = 'DELETE FROM booking WHERE user_id = $1 RETURNING *;';
+        const values = [userId];
+
+        const result = await db.query(query, values);
+        const deletedBooking = result.rows[0];
+
+        if (!deletedBooking) {
+            return res.status(404).json({ message: 'Booking not found' });
+        }
+
+        return res.json({ message: 'Booking deleted' });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Delete booking failed' });
+    }
+});
+
+// Create a review
+router.post('/review', async (req, res) => {
+    try {
+        const { wisataId, username, textReview, rating } = req.body;
+
+        const query = 'INSERT INTO review (wisata_id, username, text_review, rating) VALUES ($1, $2, $3, $4) RETURNING *;';
+        const values = [wisataId, username, textReview, rating];
+
+        const result = await db.query(query, values);
+        const newReview = result.rows[0];
+
+        return res.json(newReview);
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Create review failed' });
+    }
+});
+
+// Get all reviews
+router.get('/review', async (req, res) => {
+    try {
+        const query = 'SELECT * FROM review;';
+        const result = await db.query(query);
+        const reviews = result.rows;
+
+        return res.json(reviews);
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Retrieve reviews failed' });
+    }
+});
+
+// Get reviews for a specific wisata by ID
+router.get('/review/:wisataId', async (req, res) => {
+    try {
+        const { wisataId } = req.params;
+
+        const query = 'SELECT * FROM review WHERE wisata_id = $1;';
+        const values = [wisataId];
+
+        const result = await db.query(query, values);
+        const reviews = result.rows;
+
+        return res.json(reviews);
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Retrieve reviews failed' });
+    }
+});
+
+// Update a specific review by wisata ID and username
+router.put('/review/:wisataId/:username', async (req, res) => {
+    try {
+        const { wisataId, username } = req.params;
+        const { textReview, rating } = req.body;
+
+        const query = 'UPDATE review SET text_review = $3, rating = $4 WHERE wisata_id = $1 AND username = $2 RETURNING *;';
+        const values = [wisataId, username, textReview, rating];
+
+        const result = await db.query(query, values);
+        const updatedReview = result.rows[0];
+
+        if (!updatedReview) {
+            return res.status(404).json({ message: 'Review not found' });
+        }
+
+        return res.json(updatedReview);
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Update review failed' });
+    }
+});
+
+// Delete a specific review by wisata ID and username
+router.delete('/review/:wisataId/:username', async (req, res) => {
+    try {
+        const { wisataId, username } = req.params;
+
+        const query = 'DELETE FROM review WHERE wisata_id = $1 AND username = $2 RETURNING *;';
+        const values = [wisataId, username];
+
+        const result = await db.query(query, values);
+        const deletedReview = result.rows[0];
+
+        if (!deletedReview) {
+            return res.status(404).json({ message: 'Review not found' });
+        }
+
+        return res.json({ message: 'Review deleted' });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Delete review failed' });
+    }
+});
+
