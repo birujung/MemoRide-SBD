@@ -13,7 +13,7 @@ const app = express();
 const router = express.Router();
 const { Client } = require('pg');
 
-const port = 3000;
+const port = 6123;
 
 
 
@@ -23,7 +23,7 @@ const db = new Client({
     host: 'ep-cold-band-487702.ap-southeast-1.aws.neon.tech',
     database: 'MemoRide',
     password: 'uYJrI2KP9swx',
-    port: 6123,
+    port: 5432,
     ssl:{rejectUnauthorized: false}, 
   });
 
@@ -43,7 +43,6 @@ app.use(
         secret: 'ini contoh secret',
         saveUninitialized: true,
         resave: false,
-        cookie: { maxAge: 1000 * 60 * 60 * 24 }
     })
 );
 
@@ -72,7 +71,7 @@ app.listen(port, () => {
 router.get('/', async (req, res) => {
     try {
         const query = 'SELECT * FROM wisata;';
-        const values = ['SHOWING'];
+        const values = [];
         
         const result = await db.query(query, values);
         const wisata = result.rows;
@@ -80,6 +79,7 @@ router.get('/', async (req, res) => {
         return res.json(wisata);
     } catch (err) {
         console.error(err);
-        return res.json({ message: 'Retrieve data failed.' });
+        return res.status(500).json({ message: 'Retrieve data failed.' });
     }
 });
+
