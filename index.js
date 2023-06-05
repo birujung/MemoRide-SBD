@@ -31,7 +31,7 @@ db.connect((err)=>{
         console.log(err);
         return;
     }
-    console.log("Database connected.");
+    console.log("Connected to MemoRide!");
 });
 
 //middleware (session)
