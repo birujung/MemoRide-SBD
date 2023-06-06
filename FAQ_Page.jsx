@@ -55,22 +55,52 @@ const FAQPage = () => {
     },
   ];
 
+  const applicationFAQ = [
+    {
+      question: 'How do I download the application?',
+      answer: 'You can download the application from the official app store for your device. Search for our app and click on the download/install button.',
+    },
+    {
+      question: 'Can I use the application offline?',
+      answer: 'Some features of the application may work offline, but certain functionalities may require an internet connection.',
+    },
+    // Add more application FAQs here
+  ];
+
   return (
     <div className="faq-container">
-      <h1>Frequently Asked Questions</h1>
-      {faqData.map((faq, index) => (
-        <React.Fragment key={index}>
-          <div
-            className={`question ${activeQuestion === index ? 'active' : ''}`}
-            onClick={() => toggleAnswer(index)}
-          >
-            {faq.question}
-          </div>
-          {activeQuestion === index && (
-            <div className="answer">{faq.answer}</div>
-          )}
-        </React.Fragment>
-      ))}
+      <div className="faq-section">
+        <h2>Cultural Destination FAQs</h2>
+        {FAQData.map((faq, index) => (
+          <React.Fragment key={index}>
+            <div
+              className={`question ${activeQuestion === index ? 'active' : ''}`}
+              onClick={() => toggleAnswer(index)}
+            >
+              {faq.question}
+            </div>
+            {activeQuestion === index && (
+              <div className="answer">{faq.answer}</div>
+            )}
+          </React.Fragment>
+        ))}
+      </div>
+      <div className="faq-section">
+        <h2>Application FAQs</h2>
+        {applicationFAQ.map((faq, index) => (
+          <React.Fragment key={index}>
+            <div
+              className={`question ${activeQuestion === index ? 'active' : ''}`}
+              onClick={() => toggleAnswer(index)}
+            >
+              {faq.question}
+            </div>
+            {activeQuestion === index && (
+              <div className="answer">{faq.answer}</div>
+            )}
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 };
