@@ -1,0 +1,26 @@
+/* FAQPage.css */
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .question {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .answer {
+    display: none;
+    margin-top: 10px;
+  }
+  
+  .question.active {
+    color: blue;
+  }
+  
+  .answer.show {
+    display: block;
+  }
+  
