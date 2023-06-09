@@ -1,0 +1,35 @@
+/* FAQPage.css */
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .faq-section {
+    margin-bottom: 40px;
+  }
+  
+  .faq-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .question {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .answer {
+    display: none;
+    margin-top: 10px;
+  }
+  
+  .question.active {
+    color: blue;
+  }
+  
+  .answer.show {
+    display: block;
+  }
+  
