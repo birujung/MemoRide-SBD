@@ -183,16 +183,23 @@ export const getFeaturedTours = async (req, res) => {
     const result = await pool.query(query);
     const tours = result.rows;
 
+    if (tours.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: 'No featured tours found',
+      });
+    }
+
     res.status(200).json({
       success: true,
-      message: 'Successfully get featured tours',
+      message: 'Successfully retrieved featured tours',
       data: tours,
     });
   } catch (err) {
     console.error(err);
-    res.status(404).json({
+    res.status(500).json({
       success: false,
-      message: 'Not Found',
+      message: 'Failed to retrieve featured tours',
     });
   }
 };

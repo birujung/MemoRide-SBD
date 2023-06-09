@@ -13,10 +13,11 @@ import bookingRoute from './routes/bookings.js'
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 80;
 const corsOptions = {
-  origin: true,
+  origin: 'http://localhost:3000',
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'UPDATE', 'DELETE'],
 };
 
 // Database Connection
@@ -54,16 +55,16 @@ async function getPgVersion() {
 
 // Middleware
 app.use(express.json());
-app.use(cors(corsOptions));
 app.use(cookieParser());
+app.use(cors(corsOptions));
 app.use('/api/v1/auth', authRoute)
 app.use('/api/v1/tours', tourRoute)
 app.use('/api/v1/users', userRoute)
-app.use('/api/v1/review', reviewRoute)
+app.use('/api/v1/reviews', reviewRoute)
 app.use('/api/v1/booking', bookingRoute)
 
-app.listen(port, () => {
+app.listen(80, () => {
   connect();
-  console.log("Server listening on port", port);
+  console.log("Server listening on port", 80);
   getPgVersion();
 });
