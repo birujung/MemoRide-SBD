@@ -16,7 +16,7 @@
 
 ## Authors
 
-- [@birujung](https://www.github.com/birujung) - 
+- [@birujung](https://www.github.com/birujung) - 2106636584
 - [@akmalrbn](https://www.github.com/akmalrbn) - 2106731610
 - [@sulsyd](https://www.github.com/sulsyd) - 
 
