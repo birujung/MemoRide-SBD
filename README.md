@@ -1,25 +1,27 @@
 # MemoRide-SBD
 
 <p align="center">
-  <i align="center">A Cultural Journey</i>
+ <i align="center">A Cultural Journey</i>
 </p>
 
 <p align ="center">
   <a href="#authors">Authors</a> •
   <a href="#introduction">Introduction</a> •
-  <a href="#how-to-use">How To Use</a> •
   <a href="#language-and-tools">Language and Tools</a> •
   <a href="#tables">Tables</a> •
+  <a href="#how-to-use">How To Use</a> •
   <a href="#flowchart">Flowchart</a> •
-  <a href="#relational-table-and-uml">Relational Table and UML</a> 
+  <a href="#ERD-and-uml">ERD and UML</a> 
 </p>
+
+---
 
 ## Authors
 
-- [@birujung](https://www.github.com/birujung) - 2106636584
-- [@akmalrbn](https://www.github.com/akmalrbn) - 2106731610
-- [@sulsyd](https://www.github.com/sulsyd) - 2106731560
-
+- [Amrita Deviayu Tunjungbiru](https://www.github.com/birujung) - 2106636584
+- [Akmal Rabbani](https://www.github.com/akmalrbn) - 2106731610
+- [Sulthan Satrya Yudha Darmawan](https://www.github.com/sulsyd) - 2106731560
+---
 
 ## Introduction
 <p align="justify">MemoRide merupakan sebuah aplikasi berbasis web yang dirancang untuk memudahkan pengguna dalam melakukan *booking* destinasi wisata kultural. Dengan menggunakan halaman utama aplikasi ini, pengguna dapat dengan mudah memilih dan mencari destinasi wisata kultural di Indonesia sesuai dengan preferensi mereka. Ketika pengguna telah memilih salah satu destinasi wisata, mereka akan dapat melihat rating yang diberikan oleh pengguna lain. Aplikasi ini juga menyediakan fitur riwayat booking dan riwayat wisata bagi pengguna, sehingga pengguna dapat melacak perjalanan mereka sebelumnya.</p>
@@ -27,6 +29,12 @@
 <p align="justify">Selain itu, pengguna akan memiliki tingkatan member yang berbeda tergantung dari seberapa sering mereka melakukan perjalanan. Dalam aplikasi ini juga terdapat pengguna dengan peran admin, yang memiliki kemampuan untuk melakukan operasi CRUD (Create, Read, Update, Delete) pada destinasi wisata yang tersedia. Dengan adanya fitur ini, admin dapat dengan mudah mengelola informasi dan detail destinasi wisata.</p>
 
 <p align="justify">Dengan demikian, MemoRide hadir sebagai sebuah aplikasi web yang membantu pengguna dalam melakukan pemesanan destinasi wisata kultural di Indonesia. Aplikasi ini tidak hanya memberikan informasi dan rating yang berguna, tetapi juga menyediakan fitur riwayat dan tingkatan member, serta memberikan kontrol penuh kepada admin untuk mengelola destinasi wisata.</p>
+
+---
+
+## Language and Tools
+
+---
 
 ## Tables
 
@@ -77,11 +85,16 @@
 8. Total_Price
 
 ```
-
+---
 
 ## How To Use
 
+---
 
 ## Flowchart
 
-## Relational Table and UML 
+---
+
+## ERD and UML 
+
+---
