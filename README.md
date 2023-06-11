@@ -49,7 +49,7 @@ Meanwhile, we developed our frontend by using framweworks such as:
 
 ### 1.  ```Tour```
 
-<p align="justify">The ```Tour``` table is used to store several informations about the cultural tourist destination  which will be shown later in the ```Tours Page```. The table consists of datas which are:</p>
+<p align="justify">The ```Tour``` table is used to store several informations about the cultural tourist destination  which will be shown later in the ```Tours Page```. The datas within the table may also be utilized by Admins to make changes on the tours whether it's creating, editing, or deleting the tours. The table consists of datas which are:</p>
 
 ```
 1. id
@@ -80,7 +80,7 @@ Meanwhile, we developed our frontend by using framweworks such as:
 
 ### 3.  ```User```
 
-<p align="justify">The ```User``` table is used to store registration data from the user when they make an account. It's also used to confirm a User when logging in and when choosing the role as ```User``` or ```Admin```. The table consists of datas which are:</p>
+<p align="justify">The ```User``` table is used to store registration data from the user when they register an account or logging in. It's also used to confirm a User when logging in and when choosing the role as ```User``` or ```Admin```. The table consists of datas which are:</p>
 
 ```
 1. id
