@@ -108,5 +108,17 @@
 ---
 
 ## ERD and UML 
+<details>
+  <summary>View ERD and UML</summary>
+
+  ```Entity Relational Diagram (ERD)```
+
+![alt text](https://github.com/birujung/MemoRide-SBD/blob/tunjung/ERD_MemoRide.png)
+
+```Unified Modeling Language (UML)```
+
+![alt text](https://github.com/birujung/MemoRide-SBD/blob/tunjung/UML_MemoRide.png)
+
+</details>
 
 ---
