@@ -40,7 +40,7 @@
 
 ### 1.  ```Wisata```
 
-<p align="justify">The ```Wisata``` table is used to store several informations about the cultural destination objects which will be shown later in the ```Tours Page```. The table consists of datas which are:</p>
+<p align="justify">The ```Wisata``` table is used to store several informations about the cultural tourist destination  which will be shown later in the ```Tours Page```. The table consists of datas which are:</p>
 
 ```
 1. Nama
@@ -56,7 +56,7 @@
 
 ### 2.  ```Review```
 
-<p align="justify">The ```Review``` table is used to store informations, particularly a review about a certain cultural destination object which are input by the users and will be shown later in the ```Tours Detail Page```. The table consists of datas which are:</p>
+<p align="justify">The ```Review``` table is used to store informations, particularly a review about a certain cultural tourist destination which are input by the users and will be shown later in the ```Tours Detail Page```. The table consists of datas which are:</p>
 
 ```
 1. wisata_Id
@@ -80,7 +80,7 @@
 
 ### 4.  ```Booking```
 
-<p align="justify">The ```Booking``` table is used to store informations when users are currently booking and specifies their booking preferences on a certain cultural destination object. The table consists of datas which are:</p>
+<p align="justify">The ```Booking``` table is used to store informations when users are currently booking and specifies their booking preferences on a certain cultural tourist destination. The table consists of datas which are:</p>
 
 ```
 1. user_Id
