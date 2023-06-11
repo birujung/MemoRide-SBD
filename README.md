@@ -36,7 +36,8 @@ The Backend environment of our web-based application is supported by:
 1. [```Node.js```](https://nodejs.org/)
 2. [```PostgreSQL```](https://www.postgresql.org/)
 3. [```Postman```](https://www.postman.com/)
- 
+4. [```NeonDB```](https://neon.tech/)
+
 Meanwhile, we developed our frontend by using frameworks such as:
 1. [```JavaScript```](https://www.javascript.com/)
 2. [```CSS```](https://www.w3.org/Style/CSS/Overview.en.html)
