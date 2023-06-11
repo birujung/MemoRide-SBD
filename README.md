@@ -32,7 +32,17 @@
 ---
 
 ## Language and Tools
-
+The Backend environment of our web-based application is supported by:
+1. [```Node.js```](https://nodejs.org/)
+2. [```PostgreSQL```](https://www.postgresql.org/)
+3. [```Postman```](https://www.postman.com/)
+ 
+Meanwhile, we developed our frontend by using framweworks such as:
+1. [```JavaScript```](https://www.javascript.com/)
+2. [```CSS```](https://www.w3.org/Style/CSS/Overview.en.html)
+3. [```React```](https://react.dev/)
+ 
+ 
 ---
 
 ## Tables
@@ -108,7 +118,7 @@
 
 ```Memoride Admin Flowchart```
 
-![alt text]()
+![alt text](https://github.com/birujung/MemoRide-SBD/blob/tunjung/Admin_Flowchart.png)
 
 </details>
 
