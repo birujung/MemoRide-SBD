@@ -92,6 +92,18 @@
 ---
 
 ## Flowchart
+<details>
+  <summary>View User and Admin Flowchart:</summary>
+
+  ```MemoRide User Flowchart ```
+
+![alt text](https://github.com/birujung/MemoRide-SBD/blob/tunjung/User_Flowchart.png)
+
+```Memoride Admin Flowchart```
+
+![alt text]()
+
+</details>
 
 ---
 
