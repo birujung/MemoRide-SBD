@@ -9,7 +9,6 @@
   <a href="#introduction">Introduction</a> •
   <a href="#language-and-tools">Language and Tools</a> •
   <a href="#tables">Tables</a> •
-  <a href="#how-to-use">How To Use</a> •
   <a href="#flowchart">Flowchart</a> •
   <a href="#ERD-and-UML">ERD and UML</a> 
 </p>
@@ -38,19 +37,21 @@
 
 ## Tables
 
-### 1.  ```Wisata```
+### 1.  ```Tour```
 
-<p align="justify">The ```Wisata``` table is used to store several informations about the cultural tourist destination  which will be shown later in the ```Tours Page```. The table consists of datas which are:</p>
+<p align="justify">The ```Tour``` table is used to store several informations about the cultural tourist destination  which will be shown later in the ```Tours Page```. The table consists of datas which are:</p>
 
 ```
-1. Nama
-2. Lokasi (Jalan)
-3. Lokasi (Provinsi)
-4. Jarak
-5. Deskripsi
-6. Review
-7. Biaya per orang
-8. Maksimal orang per wisata
+1. id
+2. title
+3. city
+4. address
+5. distance
+6. photo
+7. description
+8. price
+9. max_group_size
+10. featured
 
 ```
 
@@ -59,10 +60,11 @@
 <p align="justify">The ```Review``` table is used to store informations, particularly a review about a certain cultural tourist destination which are input by the users and will be shown later in the ```Tours Detail Page```. The table consists of datas which are:</p>
 
 ```
-1. wisata_Id
-2. Username
-3. Text Review
-4. Rating
+1. id
+2. product_Id
+3. username
+4. review_text
+5. rating
 
 ```
 
@@ -71,11 +73,12 @@
 <p align="justify">The ```User``` table is used to store registration data from the user when they make an account. It's also used to confirm a User when logging in and when choosing the role as ```User``` or ```Admin```. The table consists of datas which are:</p>
 
 ```
-1. Account_ID
-2. Email
-3. Password
-4. Role
-
+1. id
+2. username
+3. email
+4. password
+5. photo
+6. role
 ```
 
 ### 4.  ```Booking```
@@ -83,20 +86,16 @@
 <p align="justify">The ```Booking``` table is used to store informations when users are currently booking and specifies their booking preferences on a certain cultural tourist destination. The table consists of datas which are:</p>
 
 ```
-1. user_Id
-2. Username
-3. Nama Lengkap
-4. Jumlah orang
-5. Nomor Telepon
-6. Booking Date
-7. Nama Wisata
-8. Total_Price
+1. id
+2. user_id
+3. user_email
+4. tour_name
+5. full_name
+6. group_size
+7. phone
+8. book_at
 
 ```
----
-
-## How To Use
-
 ---
 
 ## Flowchart
