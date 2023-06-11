@@ -39,7 +39,8 @@
 ## Tables
 
 ### 1.  ```Wisata```
-[ desc ]
+The ```Wisata``` table is used to store several informations about the cultural destination objects which will be shown later in the ```Tours Page```. The table consists of datas which are:
+
 ```
 1. Nama
 2. Lokasi (Jalan)
@@ -53,7 +54,7 @@
 ```
 
 ### 2.  ```Review```
-[ desc ]
+The ```Review``` table is used to store informations, particularly a review about a certain cultural destination object which are input by the users and will be shown later in the ```Tours Detail Page```. The table consists of datas which are:
 ```
 1. wisata_Id
 2. Username
@@ -63,7 +64,7 @@
 ```
 
 ### 3.  ```User```
-[ desc ]
+The ```User``` table is used to store registration data from the user when they make an account. It's also used to confirm a User when logging in and when choosing the role as ```User``` or ```Admin```. The table consists of datas which are:
 ```
 1. Account_ID
 2. Email
@@ -73,7 +74,7 @@
 ```
 
 ### 4.  ```Booking```
-[ desc ]
+The ```Booking``` table is used to store informations when users are currently booking and specifies their booking preferences on a certain cultural destination object. The table consists of datas which are:
 ```
 1. user_Id
 2. Username
