@@ -11,7 +11,7 @@
   <a href="#tables">Tables</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#flowchart">Flowchart</a> •
-  <a href="#ERD-and-uml">ERD and UML</a> 
+  <a href="#ERD-and-UML">ERD and UML</a> 
 </p>
 
 ---
@@ -24,11 +24,11 @@
 ---
 
 ## Introduction
-<p align="justify">MemoRide merupakan sebuah aplikasi berbasis web yang dirancang untuk memudahkan pengguna dalam melakukan *booking* destinasi wisata kultural. Dengan menggunakan halaman utama aplikasi ini, pengguna dapat dengan mudah memilih dan mencari destinasi wisata kultural di Indonesia sesuai dengan preferensi mereka. Ketika pengguna telah memilih salah satu destinasi wisata, mereka akan dapat melihat rating yang diberikan oleh pengguna lain. Aplikasi ini juga menyediakan fitur riwayat booking dan riwayat wisata bagi pengguna, sehingga pengguna dapat melacak perjalanan mereka sebelumnya.</p>
+<p align="justify">MemoRide is a web-based application designed to facilitate users in booking cultural tourist destinations. Through its homepage, users can easily select and search for cultural tourist destinations in Indonesia based on their preferences. Once users have chosen a destination, they can view ratings given by other users. The application also provides features for users to track their booking history and travel history, allowing them to keep a record of their previous trips.</p>
 
-<p align="justify">Selain itu, pengguna akan memiliki tingkatan member yang berbeda tergantung dari seberapa sering mereka melakukan perjalanan. Dalam aplikasi ini juga terdapat pengguna dengan peran admin, yang memiliki kemampuan untuk melakukan operasi CRUD (Create, Read, Update, Delete) pada destinasi wisata yang tersedia. Dengan adanya fitur ini, admin dapat dengan mudah mengelola informasi dan detail destinasi wisata.</p>
+<p align="justify">Additionally, users will have different membership levels based on how frequently they travel. The application also includes users with admin roles, who have the ability to perform CRUD operations (Create, Read, Update, Delete) on the available tourist destinations. With this feature, admins can easily manage information and details of the tourist destinations.</p>
 
-<p align="justify">Dengan demikian, MemoRide hadir sebagai sebuah aplikasi web yang membantu pengguna dalam melakukan pemesanan destinasi wisata kultural di Indonesia. Aplikasi ini tidak hanya memberikan informasi dan rating yang berguna, tetapi juga menyediakan fitur riwayat dan tingkatan member, serta memberikan kontrol penuh kepada admin untuk mengelola destinasi wisata.</p>
+<p align="justify">In summary, MemoRide is a web application that assists users in booking cultural tourist destinations in Indonesia. It not only provides useful information and ratings but also offers features for tracking history and membership levels. Furthermore, it gives admins full control to manage tourist destinations.</p>
 
 ---
 
@@ -39,7 +39,8 @@
 ## Tables
 
 ### 1.  ```Wisata```
-The ```Wisata``` table is used to store several informations about the cultural destination objects which will be shown later in the ```Tours Page```. The table consists of datas which are:
+
+<p align="justify">The ```Wisata``` table is used to store several informations about the cultural destination objects which will be shown later in the ```Tours Page```. The table consists of datas which are:</p>
 
 ```
 1. Nama
@@ -54,7 +55,9 @@ The ```Wisata``` table is used to store several informations about the cultural 
 ```
 
 ### 2.  ```Review```
-The ```Review``` table is used to store informations, particularly a review about a certain cultural destination object which are input by the users and will be shown later in the ```Tours Detail Page```. The table consists of datas which are:
+
+<p align="justify">The ```Review``` table is used to store informations, particularly a review about a certain cultural destination object which are input by the users and will be shown later in the ```Tours Detail Page```. The table consists of datas which are:</p>
+
 ```
 1. wisata_Id
 2. Username
@@ -64,7 +67,9 @@ The ```Review``` table is used to store informations, particularly a review abou
 ```
 
 ### 3.  ```User```
-The ```User``` table is used to store registration data from the user when they make an account. It's also used to confirm a User when logging in and when choosing the role as ```User``` or ```Admin```. The table consists of datas which are:
+
+<p align="justify">The ```User``` table is used to store registration data from the user when they make an account. It's also used to confirm a User when logging in and when choosing the role as ```User``` or ```Admin```. The table consists of datas which are:</p>
+
 ```
 1. Account_ID
 2. Email
@@ -74,7 +79,9 @@ The ```User``` table is used to store registration data from the user when they 
 ```
 
 ### 4.  ```Booking```
-The ```Booking``` table is used to store informations when users are currently booking and specifies their booking preferences on a certain cultural destination object. The table consists of datas which are:
+
+<p align="justify">The ```Booking``` table is used to store informations when users are currently booking and specifies their booking preferences on a certain cultural destination object. The table consists of datas which are:</p>
+
 ```
 1. user_Id
 2. Username
